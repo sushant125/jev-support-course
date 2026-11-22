@@ -1,0 +1,373 @@
+[
+  {
+    "id": "billing",
+    "title": "Duplicate subscription charge",
+    "state": {
+      "ticket": {
+        "message": "I paid for my subscription twice this month. Could you help me check the extra charge?"
+      },
+      "context": {
+        "application": "Fictional online subscription service",
+        "routing_policy": "Identify the primary issue. Request review for unclear or multiple issues. Routing never issues a refund or changes an account."
+      }
+    },
+    "discussion": "Billing is a reasonable expectation; no explicit deadline.",
+    "demo_response": {
+      "model": "DEMO-FIXTURE-NOT-A-MODEL",
+      "answers": {
+        "department": {
+          "type": "choice",
+          "choice": "billing",
+          "probabilities": {
+            "billing": 0.94,
+            "technical": 0.02,
+            "sales": 0.01,
+            "general": 0.03
+          },
+          "confidence": 0.92
+        },
+        "frustration": {
+          "type": "score",
+          "score": 0.05,
+          "probabilities": {
+            "0": 0.95,
+            "1": 0.05,
+            "2": 0
+          },
+          "confidence": 0.925,
+          "legend": {
+            "0": "Calm",
+            "1": "Frustrated",
+            "2": "Strong anger"
+          }
+        },
+        "is_urgent": {
+          "type": "noul",
+          "noul": 0.06
+        },
+        "needs_clarification": {
+          "type": "noul",
+          "noul": 0.04
+        }
+      }
+    }
+  },
+  {
+    "id": "outage",
+    "title": "Checkout outage",
+    "state": {
+      "ticket": {
+        "message": "Our checkout is down. Every customer gets an error and nobody can pay. Please restore it immediately."
+      },
+      "context": {
+        "application": "Fictional online subscription service",
+        "routing_policy": "Identify the primary issue. Request review for unclear or multiple issues. Routing never issues a refund or changes an account."
+      }
+    },
+    "discussion": "Technical and urgent are reasonable expectations, even with calm wording.",
+    "demo_response": {
+      "model": "DEMO-FIXTURE-NOT-A-MODEL",
+      "answers": {
+        "department": {
+          "type": "choice",
+          "choice": "technical",
+          "probabilities": {
+            "billing": 0.02,
+            "technical": 0.94,
+            "sales": 0.01,
+            "general": 0.03
+          },
+          "confidence": 0.92
+        },
+        "frustration": {
+          "type": "score",
+          "score": 0.1,
+          "probabilities": {
+            "0": 0.9,
+            "1": 0.1,
+            "2": 0
+          },
+          "confidence": 0.85,
+          "legend": {
+            "0": "Calm",
+            "1": "Frustrated",
+            "2": "Strong anger"
+          }
+        },
+        "is_urgent": {
+          "type": "noul",
+          "noul": 0.97
+        },
+        "needs_clarification": {
+          "type": "noul",
+          "noul": 0.02
+        }
+      }
+    }
+  },
+  {
+    "id": "sales",
+    "title": "Plan comparison",
+    "state": {
+      "ticket": {
+        "message": "We are comparing plans for a team of 20 next quarter. Which features are available?"
+      },
+      "context": {
+        "application": "Fictional online subscription service",
+        "routing_policy": "Identify the primary issue. Request review for unclear or multiple issues. Routing never issues a refund or changes an account."
+      }
+    },
+    "discussion": "Sales; the message describes a future purchase inquiry.",
+    "demo_response": {
+      "model": "DEMO-FIXTURE-NOT-A-MODEL",
+      "answers": {
+        "department": {
+          "type": "choice",
+          "choice": "sales",
+          "probabilities": {
+            "billing": 0.01,
+            "technical": 0.02,
+            "sales": 0.94,
+            "general": 0.03
+          },
+          "confidence": 0.92
+        },
+        "frustration": {
+          "type": "score",
+          "score": 0.03,
+          "probabilities": {
+            "0": 0.97,
+            "1": 0.03,
+            "2": 0
+          },
+          "confidence": 0.955,
+          "legend": {
+            "0": "Calm",
+            "1": "Frustrated",
+            "2": "Strong anger"
+          }
+        },
+        "is_urgent": {
+          "type": "noul",
+          "noul": 0.04
+        },
+        "needs_clarification": {
+          "type": "noul",
+          "noul": 0.03
+        }
+      }
+    }
+  },
+  {
+    "id": "ambiguous",
+    "title": "Unclear account issue",
+    "state": {
+      "ticket": {
+        "message": "It still does not work. Please help with my account."
+      },
+      "context": {
+        "application": "Fictional online subscription service",
+        "routing_policy": "Identify the primary issue. Request review for unclear or multiple issues. Routing never issues a refund or changes an account."
+      }
+    },
+    "discussion": "Clarification is needed. Do not equate an allowed choice with adequate evidence.",
+    "demo_response": {
+      "model": "DEMO-FIXTURE-NOT-A-MODEL",
+      "answers": {
+        "department": {
+          "type": "choice",
+          "choice": "general",
+          "probabilities": {
+            "billing": 0.23,
+            "technical": 0.28,
+            "sales": 0.03,
+            "general": 0.46
+          },
+          "confidence": 0.28
+        },
+        "frustration": {
+          "type": "score",
+          "score": 0.45,
+          "probabilities": {
+            "0": 0.55,
+            "1": 0.45,
+            "2": 0
+          },
+          "confidence": 0.325,
+          "legend": {
+            "0": "Calm",
+            "1": "Frustrated",
+            "2": "Strong anger"
+          }
+        },
+        "is_urgent": {
+          "type": "noul",
+          "noul": 0.45
+        },
+        "needs_clarification": {
+          "type": "noul",
+          "noul": 0.94
+        }
+      }
+    }
+  },
+  {
+    "id": "angry",
+    "title": "Repeated billing complaint",
+    "state": {
+      "ticket": {
+        "message": "You billed me twice again! This is outrageous and your service is useless. I have contacted you three times. Respond today!"
+      },
+      "context": {
+        "application": "Fictional online subscription service",
+        "routing_policy": "Identify the primary issue. Request review for unclear or multiple issues. Routing never issues a refund or changes an account."
+      }
+    },
+    "discussion": "Billing, strong anger and time-sensitivity are plausible judgments.",
+    "demo_response": {
+      "model": "DEMO-FIXTURE-NOT-A-MODEL",
+      "answers": {
+        "department": {
+          "type": "choice",
+          "choice": "billing",
+          "probabilities": {
+            "billing": 0.93,
+            "technical": 0.02,
+            "sales": 0.01,
+            "general": 0.04
+          },
+          "confidence": 0.906667
+        },
+        "frustration": {
+          "type": "score",
+          "score": 1.88,
+          "probabilities": {
+            "0": 0.02,
+            "1": 0.08,
+            "2": 0.9
+          },
+          "confidence": 0.82,
+          "legend": {
+            "0": "Calm",
+            "1": "Frustrated",
+            "2": "Strong anger"
+          }
+        },
+        "is_urgent": {
+          "type": "noul",
+          "noul": 0.93
+        },
+        "needs_clarification": {
+          "type": "noul",
+          "noul": 0.04
+        }
+      }
+    }
+  },
+  {
+    "id": "mixed",
+    "title": "Two issues without a primary issue",
+    "state": {
+      "ticket": {
+        "message": "I need help with a duplicate payment and I cannot sign in. Both need fixing, and I do not know which is the main problem."
+      },
+      "context": {
+        "application": "Fictional online subscription service",
+        "routing_policy": "Identify the primary issue. Request review for unclear or multiple issues. Routing never issues a refund or changes an account."
+      }
+    },
+    "discussion": "Human review because two distinct issues have no clear primary one.",
+    "demo_response": {
+      "model": "DEMO-FIXTURE-NOT-A-MODEL",
+      "answers": {
+        "department": {
+          "type": "choice",
+          "choice": "billing",
+          "probabilities": {
+            "billing": 0.45,
+            "technical": 0.44,
+            "sales": 0.01,
+            "general": 0.1
+          },
+          "confidence": 0.266667
+        },
+        "frustration": {
+          "type": "score",
+          "score": 0.2,
+          "probabilities": {
+            "0": 0.8,
+            "1": 0.2,
+            "2": 0
+          },
+          "confidence": 0.7,
+          "legend": {
+            "0": "Calm",
+            "1": "Frustrated",
+            "2": "Strong anger"
+          }
+        },
+        "is_urgent": {
+          "type": "noul",
+          "noul": 0.86
+        },
+        "needs_clarification": {
+          "type": "noul",
+          "noul": 0.91
+        }
+      }
+    }
+  },
+  {
+    "id": "refund_bug",
+    "title": "Crashing refund button",
+    "state": {
+      "ticket": {
+        "message": "The refund button crashes whenever I click it. I can use the other parts of the app."
+      },
+      "context": {
+        "application": "Fictional online subscription service",
+        "routing_policy": "Identify the primary issue. Request review for unclear or multiple issues. Routing never issues a refund or changes an account."
+      }
+    },
+    "discussion": "Technical under the course policy; the word refund alone does not determine the team.",
+    "demo_response": {
+      "model": "DEMO-FIXTURE-NOT-A-MODEL",
+      "answers": {
+        "department": {
+          "type": "choice",
+          "choice": "technical",
+          "probabilities": {
+            "billing": 0.06,
+            "technical": 0.88,
+            "sales": 0.01,
+            "general": 0.05
+          },
+          "confidence": 0.84
+        },
+        "frustration": {
+          "type": "score",
+          "score": 0.2,
+          "probabilities": {
+            "0": 0.8,
+            "1": 0.2,
+            "2": 0
+          },
+          "confidence": 0.7,
+          "legend": {
+            "0": "Calm",
+            "1": "Frustrated",
+            "2": "Strong anger"
+          }
+        },
+        "is_urgent": {
+          "type": "noul",
+          "noul": 0.12
+        },
+        "needs_clarification": {
+          "type": "noul",
+          "noul": 0.04
+        }
+      }
+    }
+  }
+]

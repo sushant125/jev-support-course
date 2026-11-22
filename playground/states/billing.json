@@ -1,0 +1,9 @@
+{
+  "ticket": {
+    "message": "I paid for my subscription twice this month. Could you help me check the extra charge?"
+  },
+  "context": {
+    "application": "Fictional online subscription service",
+    "routing_policy": "Identify the primary issue. Request review for unclear or multiple issues. Routing never issues a refund or changes an account."
+  }
+}

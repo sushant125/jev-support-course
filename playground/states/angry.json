@@ -1,0 +1,9 @@
+{
+  "ticket": {
+    "message": "You billed me twice again! This is outrageous and your service is useless. I have contacted you three times. Respond today!"
+  },
+  "context": {
+    "application": "Fictional online subscription service",
+    "routing_policy": "Identify the primary issue. Request review for unclear or multiple issues. Routing never issues a refund or changes an account."
+  }
+}

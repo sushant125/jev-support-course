@@ -1,0 +1,9 @@
+{
+  "ticket": {
+    "message": "I need help with a duplicate payment and I cannot sign in. Both need fixing, and I do not know which is the main problem."
+  },
+  "context": {
+    "application": "Fictional online subscription service",
+    "routing_policy": "Identify the primary issue. Request review for unclear or multiple issues. Routing never issues a refund or changes an account."
+  }
+}

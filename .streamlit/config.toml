@@ -1,0 +1,7 @@
+[browser]
+gatherUsageStats = false
+
+[theme]
+primaryColor = "#116B70"
+backgroundColor = "#F7F5EF"
+textColor = "#17283C"
